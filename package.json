@@ -1,0 +1,20 @@
+{
+  "name": "pyre-code",
+  "version": "1.0.0",
+  "description": "LeetCode-style ML coding problems — implement PyTorch modules from scratch",
+  "license": "MIT",
+  "author": "kiren",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiren/pyre"
+  },
+  "scripts": {
+    "postinstall": "cd web && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "uvicorn grading_service.main:app --reload --reload-exclude '.git' --reload-exclude '.venv' --port 8000",
+    "dev:frontend": "cd web && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

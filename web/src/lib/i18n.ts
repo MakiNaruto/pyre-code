@@ -1,0 +1,232 @@
+export type Locale = 'en' | 'zh';
+
+const en = {
+  // nav
+  home: 'Home',
+  problems: 'Problems',
+  solvedCount: '{solved}/{total} solved',
+  // home page
+  heroPill: '{count} AI systems challenges',
+  heroTitle: 'Build modern AI from scratch.',
+  heroSubtitle: 'Implement the internals of modern AI — from attention to RLHF, diffusion models, and distributed training. Real PyTorch tests, instant feedback.',
+  startPracticing: 'Start Practicing',
+  // difficulty
+  Easy: 'Easy',
+  Medium: 'Medium',
+  Hard: 'Hard',
+  // status filters
+  All: 'All',
+  Todo: 'Todo',
+  Attempted: 'Attempted',
+  Solved: 'Solved',
+  // problem list
+  searchPlaceholder: 'Search problems...',
+  noMatch: 'No problems match your filters.',
+  // workspace
+  description: 'Description',
+  solution: 'Solution',
+  loading: 'Loading...',
+  networkError: 'Network error',
+  implementFn: 'Implement the {fn} function.',
+  testCases: 'Test Cases',
+  moreTests: '+ {n} more tests',
+  hint: 'Hint',
+  submit: 'Submit',
+  judging: 'Judging...',
+  run: 'Run',
+  running: 'Running...',
+  allPassed: 'All Passed',
+  passedCount: '{passed}/{total} Passed',
+  // test panel
+  testCasesTab: 'Test Cases',
+  testResultsTab: 'Test Results',
+  case: 'Case',
+  passed: 'Passed',
+  failed: 'Failed',
+  runToSeeResults: 'Run code to see results',
+  addTestCase: 'Add test case',
+  customTest: 'Custom',
+  execTime: '{time}ms',
+  // solutions
+  loadingSolution: 'Loading solution...',
+  noSolution: 'No solution available yet.',
+  backToProblem: 'Back to problem',
+  // home features
+  feat1Title: 'Instant Feedback',
+  feat1Desc: 'Pass/fail per test case, execution time, and error messages — right after you submit.',
+  feat2Title: 'Real Tests',
+  feat2Desc: 'Tests run against actual PyTorch — no mocks, no shortcuts. If it passes here, it works.',
+  feat3Title: 'Progress Tracking',
+  feat3Desc: 'Track solved problems, best times, and attempt counts across sessions.',
+  browsePaths: 'Browse Learning Paths',
+  // paths
+  paths: 'Paths',
+  pathsHero: 'Structured Learning Paths',
+  pathsSubtitle: 'Follow curated sequences to build up from fundamentals to advanced topics.',
+  pathProgress: '{solved}/{total} problems',
+  pathPrerequisites: 'Prerequisites',
+  backToPaths: 'Back to Paths',
+  nextProblem: 'Next',
+  prevProblem: 'Prev',
+  pathBreadcrumb: 'Path',
+  completedBadge: 'Completed',
+} as const;
+
+type Translations = Record<keyof typeof en, string>;
+
+const zh: Translations = {
+  home: '首页',
+  problems: '题目',
+  solvedCount: '{solved}/{total} 已解决',
+  heroPill: '{count} 道 AI 系统挑战',
+  heroTitle: '从零构建现代 AI。',
+  heroSubtitle: '实现现代 AI 的内核——从注意力机制到 RLHF、扩散模型、分布式训练。真实 PyTorch 测试，即时反馈。',
+  startPracticing: '开始练习',
+  Easy: '简单',
+  Medium: '中等',
+  Hard: '困难',
+  All: '全部',
+  Todo: '未开始',
+  Attempted: '尝试过',
+  Solved: '已解决',
+  searchPlaceholder: '搜索题目...',
+  noMatch: '没有符合条件的题目。',
+  description: '题目描述',
+  solution: '题解',
+  loading: '加载中...',
+  networkError: '网络错误',
+  implementFn: '实现 {fn} 函数。',
+  testCases: '测试用例',
+  moreTests: '+ {n} 个测试',
+  hint: '提示',
+  submit: '提交',
+  judging: '评测中...',
+  run: '运行',
+  running: '运行中...',
+  allPassed: '全部通过',
+  passedCount: '{passed}/{total} 通过',
+  loadingSolution: '加载题解中...',
+  noSolution: '暂无题解。',
+  backToProblem: '返回题目',
+  // test panel
+  testCasesTab: '测试用例',
+  testResultsTab: '测试结果',
+  case: '用例',
+  passed: '通过',
+  failed: '未通过',
+  runToSeeResults: '运行代码查看结果',
+  addTestCase: '添加测试用例',
+  customTest: '自定义',
+  execTime: '{time}ms',
+  feat1Title: '即时反馈',
+  feat1Desc: '每个测试用例单独显示通过/失败、执行时间和错误信息，提交后立即可见。',
+  feat2Title: '真实测试',
+  feat2Desc: '测试直接跑在真实 PyTorch 上，没有 mock，没有捷径。这里过了，就是真的过了。',
+  feat3Title: '进度追踪',
+  feat3Desc: '跨会话记录已解决题目、最佳用时和尝试次数。',
+  browsePaths: '浏览学习路径',
+  // paths
+  paths: '学习路径',
+  pathsHero: '结构化学习路径',
+  pathsSubtitle: '按精心设计的顺序，从基础到进阶逐步掌握 PyTorch。',
+  pathProgress: '{solved}/{total} 道题',
+  pathPrerequisites: '前置路径',
+  backToPaths: '返回路径',
+  nextProblem: '下一题',
+  prevProblem: '上一题',
+  pathBreadcrumb: '路径',
+  completedBadge: '已完成',
+};
+
+export const dictionaries = { en, zh };
+
+export type TranslationKey = keyof typeof en;
+
+export function translate(locale: Locale, key: TranslationKey, params?: Record<string, string | number>): string {
+  let str: string = dictionaries[locale][key];
+  if (params) {
+    for (const [k, v] of Object.entries(params)) {
+      str = str.replace(`{${k}}`, String(v));
+    }
+  }
+  return str;
+}
+
+// Problem title translations (keyed by problem ID)
+export const problemTitles: Record<string, { en: string; zh: string }> = {
+  cross_entropy:       { en: 'Cross-Entropy Loss',                              zh: '交叉熵损失' },
+  dropout:             { en: 'Implement Dropout',                               zh: '实现 Dropout' },
+  embedding:           { en: 'Embedding Layer',                                 zh: 'Embedding 层' },
+  gelu:                { en: 'GELU Activation',                                 zh: 'GELU 激活函数' },
+  gradient_accumulation: { en: 'Gradient Accumulation',                         zh: '梯度累积' },
+  gradient_clipping:   { en: 'Gradient Norm Clipping',                          zh: '梯度范数裁剪' },
+  relu:                { en: 'Implement ReLU',                                  zh: '实现 ReLU' },
+  softmax:             { en: 'Implement Softmax',                               zh: '实现 Softmax' },
+  weight_init:         { en: 'Kaiming Initialization',                          zh: 'Kaiming 初始化' },
+  adam:                { en: 'Adam Optimizer',                                   zh: 'Adam 优化器' },
+  batchnorm:           { en: 'Implement BatchNorm',                             zh: '实现 BatchNorm' },
+  beam_search:         { en: 'Beam Search Decoding',                            zh: '束搜索解码' },
+  conv2d:              { en: '2D Convolution',                                  zh: '二维卷积' },
+  cosine_lr:           { en: 'Cosine LR Scheduler with Warmup',                 zh: '余弦学习率调度（含预热）' },
+  cross_attention:     { en: 'Multi-Head Cross-Attention',                      zh: '多头交叉注意力' },
+  layernorm:           { en: 'Implement LayerNorm',                             zh: '实现 LayerNorm' },
+  linear:              { en: 'Simple Linear Layer',                             zh: '简单线性层' },
+  linear_regression:   { en: 'Linear Regression',                               zh: '线性回归' },
+  lora:                { en: 'LoRA (Low-Rank Adaptation)',                       zh: 'LoRA（低秩适配）' },
+  mlp:                 { en: 'SwiGLU MLP',                                      zh: 'SwiGLU MLP' },
+  rmsnorm:             { en: 'Implement RMSNorm',                               zh: '实现 RMSNorm' },
+  topk_sampling:       { en: 'Top-k / Top-p Sampling',                          zh: 'Top-k / Top-p 采样' },
+  vit_patch:           { en: 'ViT Patch Embedding',                             zh: 'ViT Patch Embedding' },
+  attention:           { en: 'Softmax Attention',                               zh: 'Softmax 注意力' },
+  bpe:                 { en: 'Byte-Pair Encoding (BPE)',                         zh: '字节对编码（BPE）' },
+  causal_attention:    { en: 'Causal Self-Attention',                           zh: '因果自注意力' },
+  dpo_loss:            { en: 'DPO (Direct Preference Optimization) Loss',       zh: 'DPO 损失' },
+  flash_attention:     { en: 'Flash Attention (Tiled)',                         zh: 'Flash Attention（分块）' },
+  gpt2_block:          { en: 'GPT-2 Transformer Block',                         zh: 'GPT-2 Transformer Block' },
+  gqa:                 { en: 'Grouped Query Attention',                         zh: '分组查询注意力（GQA）' },
+  grpo_loss:           { en: 'GRPO (Group Relative Policy Optimization) Loss',  zh: 'GRPO 损失' },
+  int8_quantization:   { en: 'INT8 Quantized Linear',                           zh: 'INT8 量化线性层' },
+  kv_cache:            { en: 'KV Cache Attention',                              zh: 'KV Cache 注意力' },
+  linear_attention:    { en: 'Linear Self-Attention',                           zh: '线性自注意力' },
+  mha:                 { en: 'Multi-Head Attention',                            zh: '多头注意力' },
+  moe:                 { en: 'Mixture of Experts (MoE)',                        zh: '混合专家模型（MoE）' },
+  ppo_loss:            { en: 'PPO (Proximal Policy Optimization) Clipped Loss', zh: 'PPO 截断损失' },
+  rope:                { en: 'Rotary Position Embedding (RoPE)',                zh: '旋转位置编码（RoPE）' },
+  sliding_window:      { en: 'Sliding Window Attention',                        zh: '滑动窗口注意力' },
+  speculative_decoding: { en: 'Speculative Decoding',                           zh: '推测解码' },
+  // new problems
+  sinusoidal_pe:        { en: 'Sinusoidal Position Encoding',                   zh: '正弦位置编码' },
+  label_smoothing:      { en: 'Label Smoothing Loss',                           zh: '标签平滑损失' },
+  swiglu:               { en: 'SwiGLU Activation',                              zh: 'SwiGLU 激活函数' },
+  alibi:                { en: 'ALiBi Attention',                                zh: 'ALiBi 注意力' },
+  ntk_rope:             { en: 'NTK-aware RoPE Scaling',                         zh: 'NTK-aware RoPE 缩放' },
+  mixed_precision:      { en: 'Mixed Precision Training Step',                  zh: '混合精度训练步骤' },
+  paged_attention:      { en: 'Paged Attention',                                zh: '分页注意力' },
+  ring_attention:       { en: 'Ring Attention',                                 zh: '环形注意力' },
+  tensor_parallel:      { en: 'Tensor Parallel MLP',                            zh: '张量并行 MLP' },
+  fsdp_step:            { en: 'FSDP Training Step',                             zh: 'FSDP 训练步骤' },
+  // second batch
+  max_pool2d:           { en: 'Max Pooling 2D',                                 zh: '二维最大池化' },
+  focal_loss:           { en: 'Focal Loss',                                     zh: 'Focal Loss' },
+  contrastive_loss:     { en: 'Contrastive Loss (InfoNCE)',                     zh: '对比损失（InfoNCE）' },
+  qlora:                { en: 'QLoRA',                                          zh: 'QLoRA' },
+  mamba_ssm:            { en: 'Mamba SSM Step',                                 zh: 'Mamba SSM 步骤' },
+  activation_checkpointing: { en: 'Activation Checkpointing',                  zh: '激活检查点' },
+  depthwise_conv:       { en: 'Depthwise Separable Convolution',                zh: '深度可分离卷积' },
+  vit_block:            { en: 'ViT Transformer Block',                          zh: 'ViT Transformer Block' },
+  // third batch — LLM frontiers, Agent, DiT
+  diff_attention:       { en: 'Differential Attention',                         zh: '差分注意力' },
+  mla:                  { en: 'Multi-Head Latent Attention',                    zh: '多头潜在注意力（MLA）' },
+  multi_token_prediction: { en: 'Multi-Token Prediction',                      zh: '多 Token 预测' },
+  moe_load_balance:     { en: 'MoE Load Balancing Loss',                       zh: 'MoE 负载均衡损失' },
+  mcts_search:          { en: 'MCTS for Reasoning',                            zh: '推理蒙特卡洛树搜索' },
+  reward_model:         { en: 'Bradley-Terry Reward Model',                    zh: 'Bradley-Terry 奖励模型' },
+  adaln_zero:           { en: 'Adaptive LayerNorm Zero',                       zh: '自适应层归一化 Zero' },
+  ddim_step:            { en: 'DDIM Sampling Step',                            zh: 'DDIM 采样步骤' },
+  flow_matching:        { en: 'Flow Matching Loss',                            zh: '流匹配损失' },
+  noise_schedule:       { en: 'Diffusion Noise Schedules',                     zh: '扩散噪声调度' },
+};
+
+export function getProblemTitle(id: string, locale: Locale): string {
+  return problemTitles[id]?.[locale] ?? problemTitles[id]?.en ?? id;
+}

@@ -14,7 +14,7 @@
 
 ---
 
-## 这是什么？
+## 🧠 这是什么？
 
 68 道题。你写实现，本地评测服务跑测试，看哪里挂了。就这样。
 
@@ -39,7 +39,7 @@
 
 ---
 
-## 快速开始
+## 🚀 快速开始
 
 ### 环境要求
 
@@ -101,7 +101,7 @@ docker compose up --build
 
 ---
 
-## 题目列表
+## 📋 题目列表
 
 68 道题目，按类别分组：
 
@@ -138,7 +138,7 @@ docker compose up --build
 
 ---
 
-## 配置
+## ⚙️ 配置
 
 | 环境变量 | 默认值 | 说明 |
 |---|---|---|
@@ -149,7 +149,7 @@ docker compose up --build
 
 ---
 
-## 项目结构
+## 📁 项目结构
 
 ```
 pyre/
@@ -164,21 +164,7 @@ pyre/
 
 ---
 
-## 致谢
-
-题库和评测引擎基于 [duoan](https://github.com/duoan) 的 [TorchCode](https://github.com/duoan/TorchCode)，遵循 MIT 协议。
-
-本项目在原版基础上新增了 Web 前端和 REST 评测服务，作为原 Jupyter 界面的替代方案。
-
----
-
-## 许可证
-
-本项目基于 MIT 许可证分发。详见 [LICENSE](LICENSE)。
-
----
-
-## 贡献
+## 🤝 贡献
 
 欢迎贡献！你可以通过以下方式参与：
 
@@ -196,4 +182,16 @@ pyre/
 ![GitHub stars](https://img.shields.io/github/stars/whwangovo/pyre-code?style=social)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=whwangovo/pyre-code&type=Date)](https://star-history.com/#whwangovo/pyre-code&Date)
+
+---
+
+## 🙏 致谢
+
+题库和评测引擎基于 [duoan](https://github.com/duoan) 的 [TorchCode](https://github.com/duoan/TorchCode)，遵循 MIT 协议。
+
+---
+
+## 📄 许可证
+
+本项目基于 MIT 许可证分发。详见 [LICENSE](LICENSE)。
 

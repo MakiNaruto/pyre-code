@@ -14,7 +14,7 @@
 
 ---
 
-## What is Pyre Code?
+## 🧠 What is Pyre Code?
 
 68 problems. You write the implementation, a local grading service runs the tests, you see what broke. That's it.
 
@@ -39,7 +39,7 @@ The problems cover what's actually inside Transformers, vLLM, TRL, and diffusion
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -101,7 +101,7 @@ Open `http://localhost:3000`. Progress is persisted in a Docker volume. Run `doc
 
 ---
 
-## Problem Set
+## 📋 Problem Set
 
 68 problems organized by category:
 
@@ -138,7 +138,7 @@ Pick one based on what you're working toward:
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
 | Variable                | Default                   | Description                           |
 | ----------------------- | ------------------------- | ------------------------------------- |
@@ -149,7 +149,7 @@ Set in `web/.env.local` to override.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 pyre/
@@ -164,21 +164,7 @@ pyre/
 
 ---
 
-## Acknowledgements
-
-Problem set and judge engine based on [TorchCode](https://github.com/duoan/TorchCode) by [duoan](https://github.com/duoan), licensed under MIT.
-
-This project adds a web frontend and REST grading service on top of the original Jupyter-based interface.
-
----
-
-## License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
-
----
-
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Here are some ways you can help:
 
@@ -196,4 +182,16 @@ Please open an issue first for larger changes so we can discuss the approach.
 ![GitHub stars](https://img.shields.io/github/stars/whwangovo/pyre-code?style=social)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=whwangovo/pyre-code&type=Date)](https://star-history.com/#whwangovo/pyre-code&Date)
+
+---
+
+## 🙏 Acknowledgements
+
+Problem set and judge engine based on [TorchCode](https://github.com/duoan/TorchCode) by [duoan](https://github.com/duoan), licensed under MIT.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 

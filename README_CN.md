@@ -4,8 +4,6 @@
   <h1 align="center">🔥 Pyre Code</h1>
   <p align="center">
     从零复现现代 AI 系统的内核——Transformers、vLLM、TRL，以及更多。
-    <br />
-    顶级 ML 工程团队面试中考察的核心技能。
   </p>
 </p>
 

@@ -4,8 +4,6 @@
   <h1 align="center">🔥 Pyre Code</h1>
   <p align="center">
     Implement the internals of modern AI systems from scratch — Transformers, vLLM, TRL, and beyond.
-    <br />
-    The exact skills top ML engineering teams test for.
   </p>
 </p>
 

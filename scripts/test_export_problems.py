@@ -31,6 +31,7 @@ def test_exported_problem_shape():
     assert set(problem) == {
         "id",
         "title",
+        "titleZh",
         "difficulty",
         "functionName",
         "hint",

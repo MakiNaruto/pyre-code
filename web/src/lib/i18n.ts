@@ -89,6 +89,31 @@ const en = {
   aiHelpRequestFailed: 'AI request failed.',
   aiHelpSafetyNote: 'The assistant is instructed to give hints and debugging guidance, not a full answer.',
   aiHelpServerConfigured: 'Using server-configured AI endpoint.',
+  // hero meta
+  metaTotal: 'Total',
+  metaCoverage: 'Coverage',
+  metaRuntime: 'Runtime',
+  metaJudge: 'Judge',
+  metaTotalVal: '{n} problems',
+  metaCoverageVal: '{n} categories',
+  metaRuntimeVal: 'CPU · local',
+  // footer
+  footerBrand: 'PYRE_CODE · MIT · Built on torch_judge',
+  // problems page
+  problemsSubtitle: 'Implement the internals of modern AI — one function at a time.',
+  category: 'Category',
+  difficulty: 'Difficulty',
+  status: 'Status',
+  time: 'Time',
+  // path detail
+  pathSteps: 'Steps',
+  pathStepsNote: 'Complete in order for best results',
+  pathProblems: '{n} problems',
+  pathSolvedCount: '{solved} solved',
+  pathAttemptedCount: '{attempted} attempted',
+  continueBtn: 'Continue',
+  startBtn: 'Start',
+  progress: 'Progress',
 } as const;
 
 type Translations = Record<keyof typeof en, string>;
@@ -174,6 +199,27 @@ const zh: Translations = {
   aiHelpRequestFailed: 'AI 请求失败。',
   aiHelpSafetyNote: '助手被要求优先给提示和排查思路，而不是直接给完整答案。',
   aiHelpServerConfigured: '已使用服务端配置的 AI 接口。',
+  metaTotal: '总计',
+  metaCoverage: '覆盖',
+  metaRuntime: '运行环境',
+  metaJudge: '评测器',
+  metaTotalVal: '{n} 道题',
+  metaCoverageVal: '{n} 个分类',
+  metaRuntimeVal: 'CPU · 本地',
+  footerBrand: 'PYRE_CODE · MIT · 基于 torch_judge',
+  problemsSubtitle: '逐个函数实现现代 AI 的内核。',
+  category: '分类',
+  difficulty: '难度',
+  status: '状态',
+  time: '用时',
+  pathSteps: '步骤',
+  pathStepsNote: '建议按顺序完成',
+  pathProblems: '{n} 道题',
+  pathSolvedCount: '{solved} 已解决',
+  pathAttemptedCount: '{attempted} 尝试过',
+  continueBtn: '继续',
+  startBtn: '开始',
+  progress: '进度',
 };
 
 export const dictionaries = { en, zh };
